@@ -18,11 +18,11 @@ The goal was not just to maximize accuracy, but to build a model that is **opera
 
 **1. Daily Consumption Rhythm**
 The plot below shows a clear bimodal pattern: consumption spikes in the morning (7-9 AM) and peaks significantly in the evening (6-10 PM). This proves that time-of-day is a highly relevant feature.
-![Hourly Consumption](Khaoula-jk/electricity-consumption-prediction/main/hourly_consumption.png)
+![Hourly Consumption](https://github.com/Khaoula-jk/electricity-consumption-prediction/blob/main/hourly_consumption.png)
 
 **2. Correlation & Leakage Detection**
 The heatmap revealed that `Global_intensity` had a 1.00 correlation with the target. Because Intensity = Power / Voltage, including it would cause catastrophic data leakage. It was excluded.
-![Correlation Heatmap](Khaoula-jk/electricity-consumption-prediction/main/correlation_heatmap.png)
+![Correlation Heatmap](https://github.com/Khaoula-jk/electricity-consumption-prediction/blob/main/correlation_heatmap.png)
 
 ## Model Evaluation & The "Lag Paradox"
 I trained several Linear Regression models using a **chronological 80/20 train-test split** (no shuffling, to prevent future data leakage). 
@@ -39,7 +39,7 @@ In initial testing, adding a `lag_1min` feature skyrocketed the R² to **0.94**.
 
 Model B (using 1-hour and 1-day lags) represents an honest forecasting model. The R² is lower, but it actually solves a real-world problem by providing a 1-hour lookahead forecast.
 
-![Model Comparison](Khaoula-jk/electricity-consumption-prediction/main/model_comparison.png)
+![Model Comparison](https://github.com/Khaoula-jk/electricity-consumption-prediction/blob/main/model_comparison.png)
 
 ## How to Run
 1. Clone this repo.
